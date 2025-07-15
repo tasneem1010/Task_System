@@ -1,0 +1,17 @@
+### Java Revision
+- [x] Object-Oriented Programming Concepts
+- by defining data as objects e.g., Task
+- [x] Encapsulation
+- keeping class attributes private and using setter and getters to access them
+- [x] Abstraction
+- using an abstract class (e.g., Task) to maintain abstraction (generalisation)
+- [x] Polymorphism
+- having different implementations for each subclass for a method defined in a parent class (e.g., getType())
+- [x] Inheritance
+- implementing inheritance by having a general task class that is extended by different types of tasks
+- [x] Access Modifiers
+- using appropriate access modifiers (e.g., private for class attributes)
+- [x] Functional Interfaces
+- implementing a TaskFilter interface that contains one abstract method containing the filtering condition. 
+- [x] Stream API
+- processing data using .stream() (e.g., getSorted() and filterTasks() methods in TaskManager)
