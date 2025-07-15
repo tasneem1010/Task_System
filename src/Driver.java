@@ -4,7 +4,7 @@ import model.WorkTask;
 
 public class Driver {
     public static void main(String[] args) {
-        TaskManager  taskManager = new TaskManager();
+        TaskManager  taskManager = TaskManager.getInstance();
         Task personal = new PersonalTask("Exercise","2025-07-16" ,3,"Health");
         taskManager.addTask(personal);
         taskManager.addTask(new WorkTask("Review Latest Request", "2025-07-31",2,"Tasks System"));

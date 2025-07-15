@@ -6,8 +6,16 @@ import java.util.List;
 
 public class TaskManager {
     private List<Task> tasks;
+    private static TaskManager instance;
 
-    public TaskManager() {
+    public static TaskManager getInstance() {
+        if (instance==null){
+            instance = new TaskManager();
+        }
+        return instance;
+    }
+
+    private TaskManager() {
         this.tasks = new ArrayList<>();
     }
     public void addTask(Task task){
