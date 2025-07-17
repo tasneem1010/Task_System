@@ -1,13 +1,21 @@
+import factory.TaskFactory;
 import model.PersonalTask;
 import model.Task;
+import model.Type;
 import model.WorkTask;
 
 public class Driver {
     public static void main(String[] args) {
+        // initialize factory
+        TaskFactory factory = new TaskFactory();
+
+        Task personal = factory.createTask(Type.PERSONAL,"Exercise","2025-07-16" ,3,"Health");
+        Task work = factory.createTask(Type.WORK,"Review Latest Request", "2025-07-31",2,"Tasks System");
+
+        // get manager instance
         TaskManager  taskManager = TaskManager.getInstance();
-        Task personal = new PersonalTask("Exercise","2025-07-16" ,3,"Health");
         taskManager.addTask(personal);
-        taskManager.addTask(new WorkTask("Review Latest Request", "2025-07-31",2,"Tasks System"));
+        taskManager.addTask(work);
 
         System.out.println("All Tasks:");
         taskManager.printTasks(taskManager.getTasks());
