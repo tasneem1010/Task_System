@@ -15,3 +15,6 @@
 - implementing a TaskFilter interface that contains one abstract method containing the filtering condition. 
 - [x] Stream API
 - processing data using .stream() (e.g., getSorted() and filterTasks() methods in TaskManager)
+- [x] Singleton Design Pattern
+- task manager implemented as a singleton to handle changes to task list
+- [x] Factory Design Pattern

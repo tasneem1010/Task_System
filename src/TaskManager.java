@@ -6,11 +6,19 @@ import java.util.List;
 
 public class TaskManager {
     private List<Task> tasks;
-    private static TaskManager instance;
+    // declared as volatile to insure it is thread-safe. (changes made in one thread are immediately reflected in other threads)
+    private static volatile TaskManager instance;
 
+    // implement singleton using double-checked locking
+    // to insure thread safety while maintaining lazy initialization
     public static TaskManager getInstance() {
         if (instance==null){
-            instance = new TaskManager();
+            synchronized (TaskManager.class)
+            {
+                // check again, since multiple threads can reach the previous check
+                if (instance == null)
+                    instance = new TaskManager();
+            }
         }
         return instance;
     }
