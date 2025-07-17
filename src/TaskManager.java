@@ -1,4 +1,5 @@
 import model.Task;
+import strategy.SortStrategy;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -42,12 +43,8 @@ public class TaskManager {
                 .filter(taskFilter::filter) // add task if it matches implemented filter;
                 .toList(); // convert from stream to list
     }
-    public List<Task> sortedByDueDate(){
-        return tasks.stream()
-                .sorted(Comparator.comparing(  // sort stream of tasks ascending based on comparator
-                        Task::getDueDate // equivalent to task -> task.getDueDate()
-                        ))
-                .toList();
+    public List<Task> getTasksSorted(SortStrategy strategy){
+        return strategy.sort(tasks);
     }
     public void printTasks(List<Task> tasks){
         tasks.forEach(System.out::println);

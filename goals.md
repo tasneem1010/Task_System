@@ -18,3 +18,6 @@
 - [x] Singleton Design Pattern
 - task manager implemented as a singleton to handle changes to task list
 - [x] Factory Design Pattern
+- added task factory
+- [x] Strategy Design pattern
+- added sorting strategies
